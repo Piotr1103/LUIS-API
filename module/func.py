@@ -69,7 +69,7 @@ def sendLUIS(event, mtext):  #LUIS
             if flagcity:  #是縣市名稱
                 weather = city + '天氣資料：\n'
                 #由氣象局API取得氣象資料
-                api_link = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/%s?Authorization=%s&format=XML" % (doc_name,user_key)
+                api_link = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-4F1E78C6-CD21-4332-A767-0BE5254A00FA&format=XML"
                 report = requests.get(api_link).text
                 root = et.fromstring(report)
                 locations_info = dataset.findall('./records/location')
